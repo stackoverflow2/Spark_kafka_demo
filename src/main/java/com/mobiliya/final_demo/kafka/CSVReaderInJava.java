@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package final_demo;
+package com.mobiliya.final_demo.kafka;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;

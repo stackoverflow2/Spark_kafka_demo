@@ -1,4 +1,4 @@
-package final_demo;
+package com.mobiliya.final_demo.kafka;
 
 //import util.properties packages
 import java.sql.Connection;
