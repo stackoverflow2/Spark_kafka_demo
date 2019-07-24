@@ -139,9 +139,6 @@ public class App {
         Dataset<Row> msgDataFrame = spark.createDataFrame(rowRDD, schema);
         List<Row> rows = msgDataFrame.collectAsList();
         Dataset<Row> df = spark.createDataFrame(rows, schema).toDF();        
-       // df.show();
-       // df.printSchema();
-        
         
         Dataset<Row> df2 = df.withColumn("amount", df.col("amount").cast( DataTypes.DoubleType)).withColumnRenamed("amount", "amount")
         		.withColumn("oldbalanceOrg", df.col("oldbalanceOrg").cast( DataTypes.DoubleType)).withColumnRenamed("oldbalanceOrg", "oldbalanceOrg")
