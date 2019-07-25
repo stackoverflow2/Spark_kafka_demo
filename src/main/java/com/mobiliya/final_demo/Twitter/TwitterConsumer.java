@@ -22,7 +22,7 @@ import java.util.*;
 
 
 
-public class SparkKafka10 {
+public class TwitterConsumer {
     public static void main(String[] argv) throws Exception{
 
         // Configure Spark to connect to Kafka running on local machine
