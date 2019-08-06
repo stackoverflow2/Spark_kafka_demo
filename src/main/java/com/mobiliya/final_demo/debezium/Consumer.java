@@ -1,11 +1,11 @@
-package debezium;
+package com.mobiliya.final_demo.debezium;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import debezium.domain.val.Payload;
+import com.mobiliya.final_demo.debezium.domain.key.Key;
+import com.mobiliya.final_demo.debezium.domain.val.Payload;
+import com.mobiliya.final_demo.debezium.domain.val.Event;
 
-import debezium.domain.key.Key;
-import debezium.domain.val.Event;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Properties;

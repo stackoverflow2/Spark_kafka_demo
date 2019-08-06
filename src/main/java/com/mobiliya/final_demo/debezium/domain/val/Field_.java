@@ -1,5 +1,5 @@
 
-package debezium.domain.key;
+package com.mobiliya.final_demo.debezium.domain.val;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -7,24 +7,24 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "field",
     "type",
-    "optional"
+    "optional",
+    "field"
 })
-public class Field {
+public class Field_ {
 
-    @JsonProperty("field")
-    private String field;
     @JsonProperty("type")
     private String type;
     @JsonProperty("optional")
     private Boolean optional;
+    @JsonProperty("field")
+    private String field;
 
     /**
      * No args constructor for use in serialization
      * 
      */
-    public Field() {
+    public Field_() {
     }
 
     /**
@@ -33,20 +33,10 @@ public class Field {
      * @param optional
      * @param type
      */
-    public Field(String field, String type, Boolean optional) {
+    public Field_(String type, Boolean optional, String field) {
         super();
-        this.field = field;
         this.type = type;
         this.optional = optional;
-    }
-
-    @JsonProperty("field")
-    public String getField() {
-        return field;
-    }
-
-    @JsonProperty("field")
-    public void setField(String field) {
         this.field = field;
     }
 
@@ -68,6 +58,16 @@ public class Field {
     @JsonProperty("optional")
     public void setOptional(Boolean optional) {
         this.optional = optional;
+    }
+
+    @JsonProperty("field")
+    public String getField() {
+        return field;
+    }
+
+    @JsonProperty("field")
+    public void setField(String field) {
+        this.field = field;
     }
 
 }

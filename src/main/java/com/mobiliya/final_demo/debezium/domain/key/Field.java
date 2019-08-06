@@ -1,31 +1,24 @@
 
-package debezium.domain.val;
+package com.mobiliya.final_demo.debezium.domain.key;
 
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+    "field",
     "type",
-    "fields",
-    "optional",
-    "name",
-    "field"
+    "optional"
 })
 public class Field {
 
-    @JsonProperty("type")
-    private String type;
-    @JsonProperty("fields")
-    private List<Field_> fields = null;
-    @JsonProperty("optional")
-    private Boolean optional;
-    @JsonProperty("name")
-    private String name;
     @JsonProperty("field")
     private String field;
+    @JsonProperty("type")
+    private String type;
+    @JsonProperty("optional")
+    private Boolean optional;
 
     /**
      * No args constructor for use in serialization
@@ -37,17 +30,23 @@ public class Field {
     /**
      * 
      * @param field
-     * @param name
      * @param optional
      * @param type
-     * @param fields
      */
-    public Field(String type, List<Field_> fields, Boolean optional, String name, String field) {
+    public Field(String field, String type, Boolean optional) {
         super();
+        this.field = field;
         this.type = type;
-        this.fields = fields;
         this.optional = optional;
-        this.name = name;
+    }
+
+    @JsonProperty("field")
+    public String getField() {
+        return field;
+    }
+
+    @JsonProperty("field")
+    public void setField(String field) {
         this.field = field;
     }
 
@@ -61,16 +60,6 @@ public class Field {
         this.type = type;
     }
 
-    @JsonProperty("fields")
-    public List<Field_> getFields() {
-        return fields;
-    }
-
-    @JsonProperty("fields")
-    public void setFields(List<Field_> fields) {
-        this.fields = fields;
-    }
-
     @JsonProperty("optional")
     public Boolean getOptional() {
         return optional;
@@ -79,26 +68,6 @@ public class Field {
     @JsonProperty("optional")
     public void setOptional(Boolean optional) {
         this.optional = optional;
-    }
-
-    @JsonProperty("name")
-    public String getName() {
-        return name;
-    }
-
-    @JsonProperty("name")
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @JsonProperty("field")
-    public String getField() {
-        return field;
-    }
-
-    @JsonProperty("field")
-    public void setField(String field) {
-        this.field = field;
     }
 
 }

@@ -1,5 +1,5 @@
 
-package debezium.domain.key;
+package com.mobiliya.final_demo.debezium.domain.val;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -9,20 +9,23 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "type",
-    "name",
+    "fields",
     "optional",
-    "fields"
+    "name",
+    "version"
 })
 public class Schema {
 
     @JsonProperty("type")
     private String type;
-    @JsonProperty("name")
-    private String name;
-    @JsonProperty("optional")
-    private Boolean optional;
     @JsonProperty("fields")
     private List<Field> fields = null;
+    @JsonProperty("optional")
+    private Boolean optional;
+    @JsonProperty("name")
+    private String name;
+    @JsonProperty("version")
+    private Integer version;
 
     /**
      * No args constructor for use in serialization
@@ -33,17 +36,19 @@ public class Schema {
 
     /**
      * 
-     * @param optional
      * @param name
+     * @param optional
      * @param type
+     * @param version
      * @param fields
      */
-    public Schema(String type, String name, Boolean optional, List<Field> fields) {
+    public Schema(String type, List<Field> fields, Boolean optional, String name, Integer version) {
         super();
         this.type = type;
-        this.name = name;
-        this.optional = optional;
         this.fields = fields;
+        this.optional = optional;
+        this.name = name;
+        this.version = version;
     }
 
     @JsonProperty("type")
@@ -56,14 +61,14 @@ public class Schema {
         this.type = type;
     }
 
-    @JsonProperty("name")
-    public String getName() {
-        return name;
+    @JsonProperty("fields")
+    public List<Field> getFields() {
+        return fields;
     }
 
-    @JsonProperty("name")
-    public void setName(String name) {
-        this.name = name;
+    @JsonProperty("fields")
+    public void setFields(List<Field> fields) {
+        this.fields = fields;
     }
 
     @JsonProperty("optional")
@@ -76,14 +81,24 @@ public class Schema {
         this.optional = optional;
     }
 
-    @JsonProperty("fields")
-    public List<Field> getFields() {
-        return fields;
+    @JsonProperty("name")
+    public String getName() {
+        return name;
     }
 
-    @JsonProperty("fields")
-    public void setFields(List<Field> fields) {
-        this.fields = fields;
+    @JsonProperty("name")
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @JsonProperty("version")
+    public Integer getVersion() {
+        return version;
+    }
+
+    @JsonProperty("version")
+    public void setVersion(Integer version) {
+        this.version = version;
     }
 
 }

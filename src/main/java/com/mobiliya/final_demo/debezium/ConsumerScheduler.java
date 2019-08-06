@@ -1,4 +1,4 @@
-package debezium;
+package com.mobiliya.final_demo.debezium;
 
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;

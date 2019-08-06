@@ -1,5 +1,5 @@
 
-package debezium.domain.val;
+package com.mobiliya.final_demo.debezium.domain.val;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

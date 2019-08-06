@@ -1,5 +1,5 @@
 
-package debezium.domain.val;
+package com.mobiliya.final_demo.debezium.domain.val;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "last_name",
     "email"
 })
-public class After {
+public class Before {
 
     @JsonProperty("id")
     private Integer id;
@@ -27,7 +27,7 @@ public class After {
      * No args constructor for use in serialization
      * 
      */
-    public After() {
+    public Before() {
     }
 
     /**
@@ -37,7 +37,7 @@ public class After {
      * @param email
      * @param firstName
      */
-    public After(Integer id, String firstName, String lastName, String email) {
+    public Before(Integer id, String firstName, String lastName, String email) {
         super();
         this.id = id;
         this.firstName = firstName;
