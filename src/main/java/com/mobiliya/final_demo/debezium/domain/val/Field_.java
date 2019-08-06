@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
     "type",
     "optional",
-    "field"
+    "field",
+    "default",
+    "version"
 })
 public class Field_ {
 
@@ -19,6 +21,10 @@ public class Field_ {
     private Boolean optional;
     @JsonProperty("field")
     private String field;
+    @JsonProperty("default")
+    private String default_;
+    @JsonProperty("version")
+    private String version;
 
     /**
      * No args constructor for use in serialization

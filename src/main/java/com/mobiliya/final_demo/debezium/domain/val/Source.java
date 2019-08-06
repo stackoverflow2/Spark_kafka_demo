@@ -17,7 +17,10 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "snapshot",
     "thread",
     "db",
-    "table"
+    "table",
+    "version",
+    "connector",
+    "query"
 })
 public class Source {
 
@@ -43,7 +46,13 @@ public class Source {
     private String db;
     @JsonProperty("table")
     private String table;
-
+    @JsonProperty("version")
+    private String version;
+    @JsonProperty("connector")
+    private String connector;
+    @JsonProperty("query")
+    private String query;
+    
     /**
      * No args constructor for use in serialization
      * 
