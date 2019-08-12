@@ -26,14 +26,14 @@ public class AvroConsumer {
         properties.setProperty("specific.avro.reader", "true");
 
         KafkaConsumer<String, Transaction> kafkaConsumer = new KafkaConsumer<>(properties);
-        String topic = "test";
+        String topic = "test6";
         kafkaConsumer.subscribe(Collections.singleton(topic));
 
         System.out.println("Waiting for data...");
 
         while (true){
             System.out.println("Polling");
-            ConsumerRecords<String, Transaction> records = kafkaConsumer.poll(1000);
+            ConsumerRecords<String, Transaction> records = kafkaConsumer.poll(9000);
 
             for (ConsumerRecord<String, Transaction> record : records){
                 Transaction customer = record.value();

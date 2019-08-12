@@ -22,17 +22,29 @@ public class AvroProducer {
 
         Properties properties = new Properties();
         // normal producer
-        properties.setProperty("bootstrap.servers", "127.0.0.1:9092");
+        properties.setProperty("bootstrap.servers", "localhost:9092");
         properties.setProperty("acks", "all");
-        properties.setProperty("retries", "10");
+
+        //If the request fails, the producer can automatically retry,
+        properties.put("retries", 0);
+
+        //Specify buffer size in config
+        properties.put("batch.size", 16384);
+
+        //Reduce the no of requests less than 0
+        properties.put("linger.ms", 1);
+
+        //The buffer.memory controls the total amount of memory available to the producer for buffering.
+        properties.put("buffer.memory", 335544320);
+
         // avro part
         properties.setProperty("key.serializer", StringSerializer.class.getName());
         properties.setProperty("value.serializer", KafkaAvroSerializer.class.getName());
-        properties.setProperty("schema.registry.url", "http://127.0.0.1:8081");
+        properties.setProperty("schema.registry.url", "http://localhost:8081");
 
         Producer<String, Transaction> producer = new KafkaProducer<String, Transaction>(properties);
 
-        topic = "test";
+        topic = "test6";
         fileName = "/home/rameshwar/Downloads/paysim1/data.csv";
         //reading from CSV file and sending data
         Path pathToFile = Paths.get(fileName);
@@ -74,7 +86,7 @@ public class AvroProducer {
                         @Override
                         public void onCompletion(RecordMetadata metadata, Exception exception) {
                             if (exception == null) {
-                                //System.out.println(metadata);
+                                System.out.println(metadata);
                             } else {
                                 System.out.println("ERROR: "+exception.getMessage());
                                 exception.printStackTrace();
