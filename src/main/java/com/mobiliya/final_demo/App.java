@@ -1,5 +1,6 @@
 package com.mobiliya.final_demo;
 
+import com.mobiliya.Transaction;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -88,7 +89,7 @@ public class App {
 		params.put("auto.offset.reset", "latest");
 		params.put("enable.auto.commit", true);
 		
-		JavaInputDStream<ConsumerRecord<String, String>> stream = KafkaUtils.createDirectStream(sc, LocationStrategies.PreferConsistent(), 
+		JavaInputDStream<ConsumerRecord<String, String>> stream = KafkaUtils.createDirectStream(sc, LocationStrategies.PreferConsistent(),
 				                      ConsumerStrategies.Subscribe(topics, params));
 
 		
@@ -96,8 +97,7 @@ public class App {
 		
 		 //Create JavaRDD<Row>
 		
-		
-		
+
 		
         msgDataStream.foreachRDD(new VoidFunction<JavaRDD<String>>() {
               public void call(JavaRDD<String> rdd) throws IOException { 

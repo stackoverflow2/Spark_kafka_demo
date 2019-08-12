@@ -56,7 +56,6 @@ public class MyClass {
                     }
                     
                 } catch (IOException ex) {
-                    Logger.getLogger(Consumer.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
