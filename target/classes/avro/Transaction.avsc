@@ -4,8 +4,8 @@
 	"namespace":"com.mobiliya",
 	"doc":"This is data for transactions.",
 	"fields":[
-		{"name":"step","type":"int","default":1},
-		{"name":"type","type":"string"},
+		{"name":"step","type":"int","default":0},
+		{"name":"type","type":"string","default":"Ram_mode"},
 		{"name":"amount","type":"float"},
 		{"name":"nameOrig","type":"string"},
 		{"name":"oldbalanceOrg","type":"float"},
@@ -14,7 +14,7 @@
 		{"name":"oldbalanceDest","type":"float"},
 		{"name":"newbalanceDest","type":"float"},
 		{"name":"isFraud","type":"int"},
-		{"name":"isFlaggedFraud","type":"int"}
+		{"name":"isFlaggedFraud","type":"int","default":1}
 		]
 	
 }

@@ -31,7 +31,7 @@ public class SimpleProducer {
         Properties props = new Properties();
 
         //Assign localhost id
-        props.put("bootstrap.servers", "192.168.1.7:9092");
+        props.put("bootstrap.servers", "127.0.0.1:9092");
 
         //Set acknowledgements for producer requests.      
         props.put("acks", "all");
@@ -57,7 +57,7 @@ public class SimpleProducer {
         props.put("serializer.class", "kafk.serializer.StringEncoder");
         Producer<String, String> producer = new KafkaProducer<String, String>(props);
 
-        List<String> lines = CSVReaderInJava.readBooksFromCSV("C:\\Users\\Vaibhav\\Downloads\\Compressed\\splitcsv-9605c0bc-d274-4092-bdaf-c7b23025c5a3-results\\1.csv");
+        List<String> lines = CSVReaderInJava.readBooksFromCSV("/home/rameshwar/Downloads/paysim1/data.csv");
         
         lines.remove(0);
         lines.remove(1);

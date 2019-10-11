@@ -17,5 +17,6 @@
 /home/rameshwar/Downloads/Spark_kafka_demo/src/main/java/com/mobiliya/final_demo/debezium/domain/key/Schema.java
 /home/rameshwar/Downloads/Spark_kafka_demo/src/main/java/com/mobiliya/final_demo/Twitter/TwitterProducer.java
 /home/rameshwar/Downloads/Spark_kafka_demo/src/main/java/com/mobiliya/final_demo/debezium/domain/val/Before.java
+/home/rameshwar/Downloads/Spark_kafka_demo/src/main/java/com/mobiliya/final_demo/avro/AvroConsumer2.java
 /home/rameshwar/Downloads/Spark_kafka_demo/src/main/java/com/mobiliya/final_demo/debezium/domain/key/Payload.java
 /home/rameshwar/Downloads/Spark_kafka_demo/src/main/java/com/mobiliya/final_demo/debezium/domain/val/Field.java

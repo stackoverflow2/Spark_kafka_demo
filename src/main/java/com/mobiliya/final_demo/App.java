@@ -69,7 +69,8 @@ public class App {
 	public static boolean isFirstTime=true;
 	private static long TotalCount=0;
 
-	public static void main(String[] args) throws InterruptedException 
+	public static void main(String[] args) throws InterruptedException
+
 	{
 		System.setProperty("hadoop.home.dir", "C:/Users/Rameshwar/Documents/WinUtils");	
 		Logger.getLogger("org.apache").setLevel(Level.WARN);
@@ -82,7 +83,7 @@ public class App {
 		Collection<String> topics = Arrays.asList("test");
 		
 		Map<String, Object> params = new HashMap<>();
-		params.put("bootstrap.servers", "192.168.1.7:9092");
+		params.put("bootstrap.servers", "127.0.0.1:9092");
 		params.put("key.deserializer", StringDeserializer.class);
 		params.put("value.deserializer", StringDeserializer.class);
 		params.put("group.id", "spark-group");
